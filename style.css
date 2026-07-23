@@ -48,6 +48,57 @@ h3 {
 }
 
 /* ===== HERO ===== */
+.hero-text > * {
+  opacity: 0;.hero-text > * {
+  opacity:0;
+  transform:translateY(40px);
+  animation:heroFade .8s forwards;
+}
+
+
+.hero-text .hero-badge{
+  animation-delay:.2s;
+}
+
+.hero-text h1{
+  animation-delay:.4s;
+}
+
+.hero-text p{
+  animation-delay:.6s;
+}
+
+
+@keyframes heroFade{
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+  transform: translateY(40px);
+  animation: heroFade 0.8s forwards;
+}
+
+.hero-text .hero-badge {
+  animation-delay: 0.2s;
+}
+
+.hero-text h1 {
+  animation-delay: 0.4s;
+}
+
+.hero-text p {
+  animation-delay: 0.6s;
+}
+
+@keyframes heroFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .hero {
   position: relative;
   min-height: 760px;
@@ -67,9 +118,9 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 50px 80px;
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
 }
 .nav-left {
@@ -110,7 +161,8 @@ h3 {
   align-self: flex-end;
   color: #fff;
   max-width: 520px;
-  margin-bottom: 8px;
+  margin-bottom: 50px;
+  margin-left: 40px;
 }
 .hero-text h1 {
   font-size: 44px;
@@ -127,15 +179,16 @@ h3 {
 }
 
 /* Booking card */
+
 .booking-card {
   position: absolute;
-  top: 20px;
-  right: 40px;
-  width: 300px;
+  top: 30px;
+  right: 150px;
+  width: 360px;
   background: #fff;
-  border-radius: 14px;
-  padding: 18px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
 }
 .booking-title {
   display: flex;
@@ -164,8 +217,8 @@ h3 {
 .toggle div {
   flex: 1;
   text-align: center;
-  padding: 8px 0;
-  font-size: 13px;
+  padding: 10px 0;
+  font-size: 14px;
   font-weight: 600;
   border-radius: 6px;
   color: var(--gray);
@@ -187,7 +240,7 @@ h3 {
 .field .input {
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 12px 14px;
   font-size: 13px;
   color: #aaa;
 }
@@ -195,10 +248,10 @@ h3 {
   width: 100%;
   background: var(--yellow);
   border: none;
-  padding: 12px;
+  padding: 14px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.03em;
   margin: 14px 0 10px;
   cursor: pointer;
@@ -210,11 +263,11 @@ h3 {
 }
 .auth-row button {
   flex: 1;
-  padding: 9px;
+  padding: 11px;
   border-radius: 8px;
   border: 1px solid #e5e5e5;
   background: #fff;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -227,7 +280,7 @@ h3 {
 .social {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 60px;
 }
 .social img {
   width: 30px;
@@ -262,27 +315,49 @@ h3 {
   color: #c9d92c;
 }
 
-/* ===== AI personalize ===== */
+/* ===== AI personalize slider ===== */
 .ai-section {
   position: relative;
-  background: url(./image/main-intro.png);
+  background: url(./image/main-intro.png) center/cover no-repeat;
   color: #fff;
-  padding: 80px 40px;
-  min-height: 760px;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+}
+.ai-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 450px;
+}
+.ai-slides {
+  display: flex;
+  width: 400%;
+  transition: transform 0.6s ease;
+}
+.ai-slide {
+  width: 25%;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 .ai-inner {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 100%;
-  gap: 40px;
+  gap: 20px;
+  padding: 0 40px;
 }
 .ai-left {
   max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .ai-badge {
   background: var(--lime);
@@ -302,42 +377,86 @@ h3 {
 .ai-left p {
   color: #d8dcd6;
   font-size: 18px;
-  margin-bottom: 22px;
-  max-width: 380px;
+  margin-bottom: 0;
+  max-width: 420px;
   line-height: 1.6;
 }
 .ai-tags {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.ai-tags span {
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 11px;
-  color: #eee;
+  display: none;
 }
 .ai-right {
   display: flex;
   flex-direction: column;
   gap: 22px;
-  min-width: 220px;
+  align-items: center;
 }
 .ai-feat {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  gap: 10px;
+  align-items: baseline;
 }
 .ai-feat .num {
   color: var(--lime);
   font-weight: 700;
   font-size: 13px;
-  padding-top: 2px;
 }
 .ai-feat strong {
-  display: block;
+  display: inline;
   font-size: 25px;
+}
+
+/* slider controls */
+.ai-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: background 0.2s ease;
+}
+.ai-arrow:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+.ai-arrow.prev {
+  left: 24px;
+}
+.ai-arrow.next {
+  right: 24px;
+}
+.ai-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+.ai-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    width 0.2s ease;
+}
+.ai-dot.active {
+  background: var(--lime);
+  width: 22px;
+  border-radius: 5px;
 }
 
 /* ===== Stats / Professional golfers ===== */
@@ -373,7 +492,6 @@ h3 {
 .stat-label {
   font-size: 20px;
   color: var(--black);
- 
 }
 .stat-num {
   font-size: 50px;
@@ -384,83 +502,139 @@ h3 {
   font-size: 13px;
   color: var(--gray);
   margin-top: 2px;
-}
-
-/* ===== Reviews ===== */
+} /* ===== Reviews ===== */
 .reviews-section {
   background: var(--dark-green);
-  padding: 70px 0;
+  padding: 100px 0;
   overflow: hidden;
-  min-height: 760px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
+
 .reviews-title {
   text-align: center;
   color: #fff;
-  font-size: 26px;
-  margin-bottom: 40px;
+  font-size: 32px;
+  margin-bottom: 60px;
 }
+
 .reviews-title .hl {
   color: var(--lime);
 }
+
+/* 한 줄 */
+.reviews-row {
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+/* 카드들이 들어가는 트랙 */
 .reviews-track {
   display: flex;
   gap: 20px;
-  padding: 0 24px;
-  overflow-x: auto;
-  scrollbar-width: none;
+  width: max-content;
 }
-.reviews-track::-webkit-scrollbar {
-  display: none;
-}
+
+/* 카드 */
 .review-card {
-  flex: 0 0 320px;
+  width: 320px;
+  flex-shrink: 0;
   background: #fff;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 24px;
-  min-height: 150px;
+  transition: 0.3s;
 }
+
+.review-card:hover {
+  transform: translateY(-8px);
+}
+
 .review-top {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
+
 .review-avatar {
   width: 42px;
   height: 42px;
   border-radius: 50%;
   background: var(--pink);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-weight: 700;
-  color: #a15c6a;
-  font-size: 14px;
 }
+
 .review-name {
   font-weight: 700;
-  font-size: 15px;
 }
+
 .review-stars {
-  color: #ffb400;
-  font-size: 13px;
   margin-left: auto;
+  color: #ffb400;
 }
+
 .review-loc {
-  font-size: 12px;
-  color: var(--gray);
+  color: #777;
+  font-size: 13px;
   margin-bottom: 10px;
 }
+
 .review-text {
-  font-size: 13px;
-  color: #333;
+  font-size: 14px;
   line-height: 1.6;
 }
 
+/* 첫 번째 줄 (왼쪽) */
+.reviews-row1 .reviews-track {
+  animation: scrollLeft 35s linear infinite;
+}
+
+/* 두 번째 줄 (오른쪽) */
+.reviews-row2 .reviews-track {
+  animation: scrollRight 35s linear infinite;
+}
+
+/* 마우스 올리면 멈춤 */
+.reviews-track:hover {
+  animation-play-state: paused;
+}
+
+/* 애니메이션 */
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* ===== Steps ===== */
+
+.step {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.7s ease;
+}
+
+.step.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .steps-section {
   padding: 90px 24px;
   text-align: center;
@@ -515,6 +689,72 @@ h3 {
 }
 
 /* ===== Welcome gift ===== */
+
+.gift-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 26px 18px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  /* 추가 */
+  opacity: 0;
+  transform: translateY(60px) rotateX(20deg);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.gift-card.show {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+.gift-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: var(--lime);
+  box-shadow: 0 20px 40px rgba(215, 242, 74, 0.25);
+}
+.gift-card .emoji {
+  font-size: 30px;
+  transition: 0.4s;
+}
+
+.gift-card:hover .emoji {
+  transform: scale(1.2) rotate(-8deg);
+}
+.signup-btn {
+  background: #fff;
+  border: none;
+  padding: 16px 60px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  width: 300px;
+  margin: 0 auto;
+
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover 효과 */
+.signup-btn:hover {
+  background: var(--lime);
+  color: #153018;
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(215, 242, 74, 0.35);
+}
+
+/* 클릭 효과 */
+.signup-btn:active {
+  transform: translateY(-2px);
+}
+
 .gift-section {
   background: var(--dark-green-2);
   padding: 60px 24px;
@@ -561,8 +801,7 @@ h3 {
   letter-spacing: 0.05em;
   cursor: pointer;
   width: 300px;
-margin: 0 auto;
-  
+  margin: 0 auto;
 }
 
 /* ===== Metric bar ===== */
@@ -578,7 +817,6 @@ margin: 0 auto;
   font-size: 45px;
   font-weight: 800;
   color: var(--lime);
-
 }
 .metric-label {
   font-size: 12px;
@@ -841,9 +1079,31 @@ footer {
   .hero-text h1 {
     font-size: 32px;
   }
+  .hero-text {
+    align-self: flex-start;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
   .ai-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .ai-left h2 {
+    font-size: 38px;
+  }
+  .ai-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  .ai-arrow.prev {
+    left: 10px;
+  }
+  .ai-arrow.next {
+    right: 10px;
   }
   .pro-inner {
     flex-direction: column;
@@ -859,19 +1119,406 @@ footer {
     gap: 40px;
     flex-wrap: wrap;
   }
+  .footer-inner {
+    flex-direction: column;
+  }
+  /* ===== Course Mobile Responsive ===== */
+
+  .course-section {
+    min-height: auto;
+  }
+
   .course-card {
     flex-direction: column;
   }
+
+  /* 이미지 영역 */
   .course-media {
-    padding: 20px;
-    position: relative;
-    min-height: 260px;
+    flex: none;
+    width: 100%;
+    min-height: 420px;
+    padding: 24px;
   }
+
+  .course-tag {
+    font-size: 14px;
+  }
+
+  .course-media h2 {
+    font-size: 38px;
+  }
+
+  .course-media .loc {
+    font-size: 15px;
+  }
+
+  /* 설명 리스트 */
   .course-nav {
-    position: static;
-    margin-top: 20px;
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
   }
+
+  .course-nav-item {
+    font-size: 14px;
+  }
+
+  /* 예약 영역 */
+  .course-detail {
+    padding: 24px 20px;
+  }
+
+  /* 날짜 스크롤 */
+  .avail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .date-pills {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+
+  .date-pill {
+    flex-shrink: 0;
+  }
+
+  /* 범례 */
+  .legend {
+    flex-wrap: wrap;
+  }
+
+  /* 시간표 */
+  .slot-table {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 가격 영역 */
+  .price-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .price-info .price {
+    font-size: 30px;
+  }
+
+  .book-btn {
+    width: 100%;
+    padding: 15px;
+  }
+}
+/* =========================================
+   Mobile Responsive (max-width:600px)
+========================================= */
+
+@media (max-width: 600px) {
+  /* ===== Global ===== */
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .section-title {
+    font-size: 22px;
+    padding: 40px 20px;
+  }
+
+  /* ===== HERO ===== */
+
+  .hero {
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .nav-lang {
+    font-size: 12px;
+  }
+
+  .hero-body {
+    padding: 40px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .hero-text {
+    align-self: flex-start;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .hero-text p {
+    font-size: 13px;
+  }
+
+  .booking-card {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+  }
+
+  .social {
+    gap: 35px;
+  }
+
+  /* ===== AI SECTION ===== */
+
+  .ai-section {
+    padding: 60px 0;
+    min-height: 600px;
+  }
+
+  .ai-inner {
+    padding: 0 25px;
+  }
+
+  .ai-left h2 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .ai-left p {
+    font-size: 14px;
+  }
+
+  .ai-feat strong {
+    font-size: 18px;
+  }
+
+  .ai-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .ai-arrow.prev {
+    left: 10px;
+  }
+
+  .ai-arrow.next {
+    right: 10px;
+  }
+
+  /* ===== PROFESSIONAL ===== */
+
+  .pro-section {
+    padding: 40px 20px;
+  }
+
+  .pro-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .pro-img {
+    width: 100%;
+  }
+
+  .pro-img img {
+    height: 300px;
+  }
+
+  .pro-stats {
+    gap: 25px;
+    text-align: center;
+  }
+
+  .stat-label {
+    font-size: 16px;
+  }
+
+  .stat-num {
+    font-size: 40px;
+  }
+
+  /* ===== REVIEW ===== */
+
+  .reviews-section {
+    padding: 50px 0;
+  }
+
+  .reviews-title {
+    font-size: 22px;
+    padding: 0 20px;
+  }
+
+  .review-card {
+    flex: 0 0 280px;
+  }
+
+  /* ===== STEPS ===== */
+
+  .steps-section {
+    padding: 60px 20px;
+  }
+
+  .steps-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .steps {
+    gap: 40px;
+  }
+
+  .step h3 {
+    font-size: 20px;
+  }
+
+  .step p {
+    font-size: 14px;
+  }
+
+  /* ===== GIFT ===== */
+
+  .gift-section {
+    padding: 50px 20px;
+  }
+
+  .gift-title {
+    font-size: 22px;
+  }
+
+  .gift-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .gift-card {
+    padding: 25px 15px;
+  }
+
+  .signup-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* ===== METRIC ===== */
+
+  .metric-bar {
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 30px 20px;
+  }
+
+  .metric-num {
+    font-size: 38px;
+  }
+
+  /* ===== COURSE ===== */
+
+  .course-card {
+    flex-direction: column;
+  }
+
+  .course-media {
+    min-height: 420px;
+    padding: 24px;
+  }
+
+  .course-tag {
+    font-size: 14px;
+  }
+
+  .course-media h2 {
+    font-size: 38px;
+  }
+
+  .course-media .loc {
+    font-size: 15px;
+  }
+
+  .course-nav {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  .course-nav-item {
+    font-size: 14px;
+  }
+
+  .course-detail {
+    padding: 25px 20px;
+  }
+
+  .avail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .date-pills {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+  }
+
+  .date-pill {
+    flex-shrink: 0;
+  }
+
+  .legend {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .slot-table {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .slot {
+    padding: 12px 5px;
+  }
+
+  .price-row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .price-info .price {
+    font-size: 30px;
+  }
+
+  .book-btn {
+    width: 100%;
+    padding: 15px;
+  }
+
+  /* ===== FOOTER ===== */
+
+  footer {
+    padding: 45px 20px 25px;
+  }
+
   .footer-inner {
     flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-col h4 {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
   }
 }
